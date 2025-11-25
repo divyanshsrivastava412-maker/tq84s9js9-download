@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>Thank You – Your Ebook Is Ready</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
+
   <!-- Meta Pixel Code -->
   <script>
   !function(f,b,e,v,n,t,s)
@@ -16,19 +16,20 @@
   s.parentNode.insertBefore(t,s)}(window, document,'script',
   'https://connect.facebook.net/en_US/fbevents.js');
 
-  // NEW pixel
+  // YOUR pixel – make sure this ID matches your ad account
   fbq('init', '1411538397169947');
   fbq('track', 'PageView');
 
-  // ONLY fire Purchase if user came from Instamojo payment page
-  if (document.referrer && document.referrer.includes('instamojo.com')) {
-    fbq('track', 'Purchase'); 
-  }
+  // Fire Purchase for everyone who lands on this thank-you page
+  fbq('track', 'Purchase', {
+    value: 149.00,
+    currency: 'INR'
+  });
   </script>
 
   <noscript>
     <img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1547703053165606&ev=PageView&noscript=1"/>
+      src="https://www.facebook.com/tr?id=1411538397169947&ev=PageView&noscript=1"/>
   </noscript>
   <!-- End Meta Pixel Code -->
 
@@ -99,7 +100,6 @@
       is now ready.
     </p>
 
-    <!-- WORKING DOWNLOAD BUTTON with your Drive link -->
     <a class="btn" href="https://drive.google.com/uc?export=download&id=19nZOK3t-4ip5GsJ6ZAHYwIp1Dvh3Pg7p" 
        target="_blank" rel="noopener noreferrer">
       Download Your Ebook
